@@ -4,6 +4,8 @@ const natsWrapper = require('./nats_wrapper')
 const cors = require('cors')
 const ProductCreatedPublisher = require('./product-created-publisher')
 
+const PORT = process.env.PORT || 3000
+
 app.use(cors())
 app.use(express.json())
 
@@ -33,8 +35,8 @@ const start = async () => {
     try {
         await natsWrapper.connect()
 
-        app.listen(3000, () => {
-            console.log("Server listening on port 3000")
+        app.listen(PORT, () => {
+            console.log("Server listening on port ", PORT)
         })
     } catch (err) {
         console.log(err)
