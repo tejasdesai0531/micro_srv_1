@@ -13,7 +13,7 @@ class NatsWrapper {
     }
 
     connect() {
-        this.#client = stan.connect('test-cluster', 'client-name', {
+        this.#client = stan.connect('test-cluster', 'micro-srv-1', {
             url: 'nats://44.204.41.148:4222',
         });
 
